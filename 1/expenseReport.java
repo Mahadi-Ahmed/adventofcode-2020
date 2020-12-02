@@ -30,10 +30,30 @@ class expenseReport {
         return 0;
     }
 
+    public static Integer threefactorSum2020(ArrayList<Integer> expenses) {
+        for (int i = 0; i < expenses.size(); i++) {
+            for (int j = 1; j < expenses.size(); j++) {
+                for (int k = 2; k < expenses.size(); k++) {
+                    if (expenses.get(i) + expenses.get(j) + expenses.get(k) == 2020) {
+                        System.out.println(expenses.get(i));
+                        System.out.println(expenses.get(j));
+                        System.out.println(expenses.get(k));
+                        return expenses.get(i) * expenses.get(j) * expenses.get(k);
+                    }
+                }
+            }
+        }
+        return 0;
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<Integer> expenses = data("input.txt");
 
-        Integer result = sum2020(expenses);
-        System.out.println("result: " + result);
+        Integer result1 = sum2020(expenses);
+        System.out.println("result part 1: " + result1);
+
+        Integer result2 = threefactorSum2020(expenses);
+        System.out.println("result part 2: " + result2);
+
     }
 }
