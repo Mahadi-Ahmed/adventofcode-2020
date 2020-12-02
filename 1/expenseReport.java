@@ -35,9 +35,6 @@ class expenseReport {
             for (int j = 1; j < expenses.size(); j++) {
                 for (int k = 2; k < expenses.size(); k++) {
                     if (expenses.get(i) + expenses.get(j) + expenses.get(k) == 2020) {
-                        System.out.println(expenses.get(i));
-                        System.out.println(expenses.get(j));
-                        System.out.println(expenses.get(k));
                         return expenses.get(i) * expenses.get(j) * expenses.get(k);
                     }
                 }
